@@ -1,0 +1,29 @@
+﻿<Window x:Class="Srt2ExoMarks.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Srt2ExoMarks"
+        mc:Ignorable="d"
+        Title="Srt转Exo视频标记" Height="140" Width="450" AllowDrop="True" PreviewDragOver="Window_PreviewDragOver" PreviewDrop="Window_PreviewDrop" Closing="Window_Closing">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border BorderThickness="2,1,0.5,1" BorderBrush="LightGray" Grid.Column="0"/>
+            <Border BorderThickness="0.5,1,0.5,1" BorderBrush="LightGray" Grid.Column="1"/>
+            <Border BorderThickness="0.5,1,2,1" BorderBrush="LightGray" Grid.Column="2"/>
+            <RadioButton x:Name="IncludeStartBox" FontSize="16" Content="仅包括开始" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" GroupName="Mode" IsChecked="True"/>
+            <RadioButton x:Name="IncludeBothBox" FontSize="16" Content="包括开始和结束" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" GroupName="Mode"/>
+            <RadioButton x:Name="IncludeEndBox" FontSize="16" Content="仅包括结束" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" GroupName="Mode"/>
+        </Grid>
+        <TextBlock x:Name="InfoBox" FontSize="15" Text="拖入视频文件，Srt字幕文件与视频文件同名置于同目录中" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1"/>
+    </Grid>
+</Window>
